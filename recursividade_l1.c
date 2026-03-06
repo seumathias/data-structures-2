@@ -51,3 +51,23 @@ int main(){
     printf("o maior número é de == %d", z);
     return 0;
 }
+//BUSCA SEQUENCIAL
+#include <stdio.h>
+
+int buscarArray(int lista[], int n, int i){
+    if(n == 1) return 0;
+    int alvo = buscarArray(lista, n-1, i);
+    if(lista[n-1] == i)
+        return n-1;
+    else
+        return alvo;
+}
+
+int main(){
+    int lista [] = {2,3,4,5,23,7,64,9,10};
+    int x = sizeof(lista) / sizeof(lista[0]);
+    int alvo = 3;
+    int z = buscarArray(lista, x, alvo);
+    printf("O número %d está na posicão [%d]",alvo, z);
+    return 0;
+}
