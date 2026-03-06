@@ -1,3 +1,18 @@
+//POTÊNCIA
+#include <stdio.h>
+
+int pot(int x, int y){
+    if(y == 0) return 1;
+    return x * pot(x,y-1);
+}
+
+int main(){
+    int x = 2;
+    int y = 3;
+    int z = pot(x, y);
+    printf("A potência %d^%d é == %d",x,y,z);
+    return 0;
+}
 
 
 //SOMANDO VALORES DE UM ARRAY
