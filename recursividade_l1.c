@@ -1,5 +1,21 @@
 
 
+//SOMANDO VALORES DE UM ARRAY
+#include <stdio.h>
+
+int sumArray(int lista[], int n){
+    if(n == 0) return 0;
+    return lista[n-1] + sumArray(lista, n-1);
+}
+
+int main(){
+    int lista [] = {2,3,4,5};
+    int x = sizeof(lista) / sizeof(lista[0]);
+    int z = sumArray(lista, x);
+    printf("A soma é == %d", z);
+    return 0;
+}
+
 
 //COMO SELECIONAR O MAIOR ITEM DE UM ARRAY
 #include <stdio.h>
