@@ -71,3 +71,28 @@ int main(){
     printf("O número %d está na posicão [%d]",alvo, z);
     return 0;
 }
+
+//BUSCA BINÁRIA
+#include <stdio.h>
+
+int buscarArray(int lista[], int a, int n, int i){
+    int inc = a;
+    int fim = n;
+    int meio = inc + (fim - inc) / 2;
+	
+	if(lista[meio] == i)
+		return meio;
+	if(i < lista[meio])
+		return buscarArray(lista,inc, meio - 1, i);
+		else
+			return buscarArray(lista, meio + 1, fim, i);    
+}
+int main(){
+    int lista[] = {1,2,3,4,5,6,7,8,9,10,11};
+    int fim = sizeof(lista);
+    int alvo = 3;
+    int z = buscarArray(lista, 0, fim, alvo);
+    printf("O número %d está na posicão [%d]",alvo, z);
+    return 0;
+}
+
