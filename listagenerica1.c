@@ -62,7 +62,6 @@ void inItem(Object lst, char* nome, int p){
         lst->left->right = n;
         lst->right = NULL;
     }
-    
 }
 
 void inPlayer(Object lst, char* nome, int h){
@@ -77,29 +76,74 @@ void inPlayer(Object lst, char* nome, int h){
     }
 }
 
-void printList(Object lst, int opt){
+void printPlayer(Player p){
+     printf("PLAYER----\nNome: %s\nHP: %d\n", p->nome, p->hp);
+}
+
+void printItem(Item o){
+    printf("ITEM----\nNome: %s\nPoder: %d\n", o->nome, o->power);
+    }
+
+void printListItem(Object lst){
     Object o = lst->left;
-    switch(opt){
-        case 1: printPlayer(o);
-        break;
-        case 2: printItem(o);
-        break;
+    while(o){
+        if(o->item == Item)
+            printItem(o);
+        }
+        o = o->right;
     }
 }
 
-void printPlayer(Object o){
-     printf("PLAYER----\nNome: %s\nHP: %d\n", o->Player->nome, o->Player->hp);
+void printListPlayer(Object lst){
+    Object o = lst->left;
+    while(o){
+        if(o->item == Player)
+            printPlayer(o);
+        }
+        o = o->right;
+    }
+
+void AdicionarItem(Object lst){
+    char nome[100];
+    int p;
+    printf("Digite o nome do Item:\n");
+    scanf(" %[^\n]s", nome);
+    printf("E qual o poder?\n");
+    scanf(" %d", &p);
+    return inItem(lst, nome, p);
 }
 
-void printItem(Object o){
-    printf("ITEM----\nNome: %s\nPoder: %d\n", o->Item->nome, o->Item->power);
-    }
+void AdicionarPlayer(Object lst){
+    char nome[100];
+    int p;
+    printf("Digite o nome do jogador:\n");
+    scanf(" %[^\n]s", nome);
+    printf("E quantos HP?\n");
+    scanf(" %d", &p);
+    return inPlayer(lst, nome, p);
+}
+
+int menu(){
+    int opt;
+    printf("1-Adicionar item\n");
+    printf("2-Adicionar Player\n");
+    printf("3-Listar Items\n");
+    printf("4-Listar Players\n");
 }
 
 int main()
 {
-	List lst = new(Object);
-
-	Object arma = new(Item, "arma", 50);
+	Object lst = new(Object);
+    
+    switch(menu()){
+        case 1: AdicionarItem(lst);
+        break;
+        case 2: AdicionarPlayer(lst);
+        break;
+        case 3: printListItem(lst);
+        break;
+        case 4: printListPlayer(lst);
+        break;
+    }
 
 }
