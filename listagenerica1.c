@@ -87,7 +87,7 @@ void printItem(Item o){
 void printListItem(Object lst){
     Object o = lst->left;
     while(o){
-        if(o->item == Item)
+        if(o->item == typeof(Item))
             printItem(o->item);
         }
         o = o->right;
@@ -96,11 +96,11 @@ void printListItem(Object lst){
 void printListPlayer(Object lst){
     Object o = lst->left;
     while(o){
-        if(o->item == Player)
+        if(o->item == typeof(Player))
             printPlayer(o->item);
-        }
         o = o->right;
     }
+}   
 
 void AdicionarItem(Object lst){
     char nome[100];
