@@ -88,17 +88,16 @@ void printListItem(Object lst){
     Object o = lst->left;
     while(o){
         if(o->item == Item)
-            printItem(o);
+            printItem(o->item);
         }
         o = o->right;
     }
-}
 
 void printListPlayer(Object lst){
     Object o = lst->left;
     while(o){
         if(o->item == Player)
-            printPlayer(o);
+            printPlayer(o->item);
         }
         o = o->right;
     }
