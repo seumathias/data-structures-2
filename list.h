@@ -1,6 +1,6 @@
 #ifndef LIST_H
 #define LIST_H
-
+#include <stdio.h>
 
 typedef struct __List{
     int size;
