@@ -102,7 +102,7 @@ static void pop(List self){
     self->head = obj->right;
     if(self->head) self->head->left = NULL;
     else self->tail = NULL;
-    obj->destroy(obj);
+    //obj->destroy(obj);
     self->size--;
 }
 
