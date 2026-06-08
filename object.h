@@ -1,8 +1,12 @@
 #ifndef OBJECT_H
 #define OBJECT_H
+
+#include <stdlib.h>
+#include <stdio.h>
 #include <stdarg.h>
 
-#define new(TYPE,...) new##TYPE(__VA_ARGS__)
+
+#define new(TYPE, ...) new_##TYPE(__VA_ARGS__)
 
 typedef struct __Node{
     void* content;
