@@ -61,3 +61,5 @@ Object new_Object(int id){
 }
 
 #endif
+
+//Rodrigo Mathias de Queiroz
